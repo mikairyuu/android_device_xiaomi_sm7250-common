@@ -1,1 +1,3 @@
 allow platform_app zygote:unix_stream_socket { getopt };
+# Face Unlock
+get_prop(platform_app, vendor_camera_prop)
