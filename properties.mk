@@ -440,3 +440,6 @@ persist.camera.iface.logs=0 \
 persist.camera.imglib.logs=0 \
 persist.camera.isp.debug=0 \
 persist.camera.sensor.debug=0
+
+# Zygote
+zygote.critical_window.minute=10
