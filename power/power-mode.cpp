@@ -18,9 +18,16 @@
 #include <android-base/file.h>
 #include <android-base/logging.h>
 #include <linux/input.h>
+#include <atomic>
 
 namespace {
+
+char mDt2wPath[PATH_MAX];
+std::atomic<bool> mPathCached;
 int open_ts_input() {
+    if (mPathCached) {
+        return (open(mDt2wPath, O_RDWR));
+    }
     int fd = -1;
     DIR* dir = opendir("/dev/input");
 
@@ -37,8 +44,12 @@ int open_ts_input() {
 
                 fd = open(absolute_path, O_RDWR);
                 if (ioctl(fd, EVIOCGNAME(sizeof(name) - 1), &name) > 0) {
-                    if (strcmp(name, "fts_ts") == 0)
+                    if (strcmp(name, "fts_ts") == 0){
+                        // cache the dt2w node after finding a match
+                        strncpy(mDt2wPath, absolute_path, PATH_MAX);
+                        mPathCached = true;
                         break;
+                    }
                 }
 
                 close(fd);
