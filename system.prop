@@ -17,6 +17,9 @@ persist.vendor.color.matrix=2
 # CNE
 persist.vendor.cne.feature=1
 
+# FUSE passthrough
+persist.sys.fuse.passthrough.enable=true
+
 # DPM
 persist.vendor.dpm.feature=1
 persist.vendor.dpm.loglevel=0
