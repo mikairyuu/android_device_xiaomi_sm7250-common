@@ -166,7 +166,7 @@ bluetooth.profile.sap.server.enabled=true
 
 # Camera
 PRODUCT_VENDOR_PROPERTIES += \
-vendor.camera.aux.packagelist=org.codeaurora.snapcam
+vendor.camera.aux.packagelist=com.android.camera,org.lineageos.aperture,org.pixelexperience.faceunlock
 
 PRODUCT_SYSTEM_PROPERTIES += \
 camera.disable_zsl_mode=true \
