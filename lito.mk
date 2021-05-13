@@ -337,7 +337,7 @@ PRODUCT_PACKAGES += \
 # Power
 PRODUCT_PACKAGES += \
     android.hardware.power-service.xiaomi-lito-libperfmgr \
-    android.hardware.power.stats@1.0-service.mock
+    android.hardware.power.stats@1.0-service.xiaomi_lito
 
 # Public libraries
 PRODUCT_COPY_FILES += \
