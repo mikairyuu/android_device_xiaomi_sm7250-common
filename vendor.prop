@@ -259,6 +259,15 @@ persist.vendor.radio.uicc_se_enabled=true
 rild.libpath=/vendor/lib64/libril-qc-hal-qmi.so
 ro.com.android.dataroaming=false
 
+#Blur
+ro.surface_flinger.supports_background_blur=1
+ro.sf.blurs_are_expensive=1
+debug.sf.latch_unsignaled=1
+debug.sf.disable_backpressure=1
+
+#Gboard
+ro.com.google.ime.corner_key_r=35
+
 # Seamless transfer
 sys.fflag.override.settings_seamless_transfer=true
 
