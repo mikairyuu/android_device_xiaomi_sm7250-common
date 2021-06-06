@@ -3,6 +3,9 @@ persist.audio.button_jack.profile=volume
 persist.audio.button_jack.switch=0
 tunnel.audio.encode=true
 
+# Bluetooth
+persist.bluetooth.sbc_hd_higher_bitrate=1
+
 # Camera
 camera.disable_zsl_mode=true
 
