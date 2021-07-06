@@ -143,7 +143,7 @@ ro.sf.blurs_are_expensive=1
 ro.surface_flinger.supports_background_blur=1
 
 # Camera
-vendor.camera.aux.packagelist=org.codeaurora.snapcam,com.xiaomi.cameratest,com.xiaomi.factory.mmi,com.android.camera
+vendor.camera.aux.packagelist=org.codeaurora.snapcam
 
 # Crypto
 ro.crypto.allow_encrypt_override=true
