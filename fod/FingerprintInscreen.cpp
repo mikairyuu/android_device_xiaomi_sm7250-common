@@ -17,7 +17,6 @@
 #define PARAM_NIT_NONE 0
 
 #define TOUCH_FOD_ENABLE 10
-#define FINGERPRINT_ERROR_VENDOR 8
 
 #define BRIGHTNESS_PATH "/sys/class/backlight/panel0-backlight/brightness"
 
@@ -82,7 +81,8 @@ Return<bool> FingerprintInscreen::handleAcquired(int32_t acquiredInfo, int32_t v
 }
 
 Return<bool> FingerprintInscreen::handleError(int32_t error, int32_t vendorCode) {
-    return error == FINGERPRINT_ERROR_VENDOR && vendorCode == 5;
+    LOG(ERROR) << "error: " << error << ", vendorCode: " << vendorCode;
+    return false;
 }
 
 Return<void> FingerprintInscreen::setLongPressEnabled(bool) {
