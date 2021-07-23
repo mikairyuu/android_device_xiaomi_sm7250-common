@@ -79,4 +79,12 @@
             <instance>default</instance>
         </interface>
     </hal>
+    <hal format="hidl" optional="true">
+        <name>vendor.lineage.biometrics.fingerprint.inscreen</name>
+        <version>1.0-1</version>
+        <interface>
+            <name>IFingerprintInscreen</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
 </compatibility-matrix>

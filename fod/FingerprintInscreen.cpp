@@ -27,7 +27,7 @@ namespace lineage {
 namespace biometrics {
 namespace fingerprint {
 namespace inscreen {
-namespace V1_0 {
+namespace V1_1 {
 namespace implementation {
 
 static bool readBool(int fd) {
@@ -124,7 +124,7 @@ Return<bool> FingerprintInscreen::shouldBoostBrightness() {
     return false;
 }
 
-Return<void> FingerprintInscreen::setCallback(const sp<IFingerprintInscreenCallback>& /* callback */) {
+Return<void> FingerprintInscreen::setCallback(const sp<V1_0::IFingerprintInscreenCallback>& /* callback */) {
     return Void();
 }
 
@@ -140,8 +140,12 @@ Return<int32_t> FingerprintInscreen::getSize() {
     return FOD_SIZE;
 }
 
+Return<bool> FingerprintInscreen::shouldEnableDimlayer() {
+    return true;
+}
+
 }  // namespace implementation
-}  // namespace V1_0
+}  // namespace V1_1
 }  // namespace inscreen
 }  // namespace fingerprint
 }  // namespace biometrics
