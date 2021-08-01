@@ -138,10 +138,6 @@ ro.bluetooth.a2dp_offload.supported=true
 ro.vendor.bluetooth.wipower=false
 vendor.qcom.bluetooth.soc=cherokee
 
-# Blur
-ro.sf.blurs_are_expensive=1
-ro.surface_flinger.supports_background_blur=1
-
 # Camera
 vendor.camera.aux.packagelist=org.codeaurora.snapcam
 
