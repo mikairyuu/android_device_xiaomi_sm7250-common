@@ -343,6 +343,10 @@ PRODUCT_PACKAGES += \
     librmnetctl \
     libxml2
 
+# RenderScript
+PRODUCT_PACKAGES += \
+    android.hardware.renderscript@1.0-impl
+
 # Rootdir
 PRODUCT_PACKAGES += \
     init.class_main.sh \
