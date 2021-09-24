@@ -139,7 +139,7 @@ ro.vendor.bluetooth.wipower=false
 vendor.qcom.bluetooth.soc=cherokee
 
 # Camera
-vendor.camera.aux.packagelist=org.codeaurora.snapcam
+vendor.camera.aux.packagelist=org.codeaurora.snapcam,lineageos.snap,com.android.camera,com.google.android.GoogleCamera
 
 # Crypto
 ro.crypto.allow_encrypt_override=true
