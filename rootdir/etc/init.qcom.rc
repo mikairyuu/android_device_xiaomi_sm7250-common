@@ -890,12 +890,6 @@ on charger
     setprop persist.sys.usb.config mass_storage
     start qcom-post-boot
     
-service vendor.power /vendor/bin/hw/android.hardware.power-service-qti
-    override
-    class hal
-    user system
-    group system input
-
 #add poweroffhandler
 service poweroffhandler /system/vendor/bin/poweroffhandler
     class core
