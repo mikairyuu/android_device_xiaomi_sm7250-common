@@ -145,7 +145,9 @@ TARGET_COPY_OUT_VENDOR := vendor
 # Platform
 BOARD_VENDOR := xiaomi
 BOARD_USES_QCOM_HARDWARE := true
+QCOM_BOARD_PLATFORMS += lito
 TARGET_BOARD_PLATFORM := lito
+TARGET_BOARD_PLATFORM_GPU := qcom-adreno620
 
 # Power
 TARGET_TAP_TO_WAKE_NODE := "/sys/touchpanel/double_tap"
