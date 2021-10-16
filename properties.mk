@@ -378,3 +378,8 @@ wifi.aware.interface=wifi-aware0
 # Zygote
 PRODUCT_SYSTEM_PROPERTIES += \
 persist.device_config.runtime_native.usap_pool_enabled=true
+
+#IORap
+PRODUCT_SYSTEM_PROPERTIES += \
+ro.iorapd.enable=true \
+persist.device_config.runtime_native_boot.iorap_readahead_enable=true
