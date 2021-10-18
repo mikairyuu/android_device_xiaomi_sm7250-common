@@ -275,6 +275,9 @@ ro.vendor.radio.5g=3
 # Seamless transfer
 sys.fflag.override.settings_seamless_transfer=true
 
+# System
+persist.sys.binary_xml=false
+
 # Sensors
 persist.vendor.sensors.allow_non_default_discovery=true
 persist.vendor.sensors.sync_request=true
