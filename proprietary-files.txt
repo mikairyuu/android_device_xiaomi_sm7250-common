@@ -723,6 +723,10 @@ vendor/lib64/vendor.qti.hardware.soter@1.0.so|9e7805fbc289224be834e5523a63421817
 # Soter service (Tencent) - from vangogh 11 RKQ1.200826.002 V12.1.7.0.RJVCNXM release-keys
 -vendor/app/SoterService/SoterService.apk|939423f0016034cf8676f64d384aafde308f779b
 
+# Thermal
+vendor/bin/mi_thermald
+vendor/etc/init/init.mi_thermald.rc
+
 # Thermal engine - from LA.UM.9.12.r1-13400.02-SMxx50.QSSI12.0
 vendor/bin/thermal-engine|13d6a468a70160c136fb1bd4a59aeacba353c802
 -vendor/lib/libthermalclient.so|20114bc026d44fd2599f6ea11814c0f47608d2ff
