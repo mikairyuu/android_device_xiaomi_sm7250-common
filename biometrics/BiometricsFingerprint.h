@@ -25,9 +25,6 @@
 #include <hidl/Status.h>
 #include <android/hardware/biometrics/fingerprint/2.3/IBiometricsFingerprint.h>
 #include <vendor/xiaomi/hardware/fingerprintextension/1.0/IXiaomiFingerprint.h>
-#include <aidl/android/hardware/power/Boost.h>
-#include <aidl/android/hardware/power/IPower.h>
-#include <android/binder_manager.h>
 
 namespace android {
 namespace hardware {
@@ -36,8 +33,6 @@ namespace fingerprint {
 namespace V2_3 {
 namespace implementation {
 
-using ::aidl::android::hardware::power::Boost;
-using ::aidl::android::hardware::power::IPower;
 using ::android::hardware::biometrics::fingerprint::V2_3::IBiometricsFingerprint;
 using ::android::hardware::biometrics::fingerprint::V2_1::FingerprintAcquiredInfo;
 using ::android::hardware::biometrics::fingerprint::V2_1::FingerprintError;
@@ -89,7 +84,6 @@ private:
 
     std::mutex mClientCallbackMutex;
     sp<IBiometricsFingerprintClientCallback> mClientCallback;
-    std::shared_ptr<IPower> mPowerService;
     xiaomi_fingerprint_device_t *mDevice;
 };
 
