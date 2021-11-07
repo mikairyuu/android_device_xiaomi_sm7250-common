@@ -1,0 +1,10 @@
+on boot
+    chown system system /sys/class/drm/card0-DSI-1/disp_param
+    chown system system /sys/devices/platform/soc/soc:qcom,dsi-display-primary/dimlayer_exposure
+    chmod 0660 /sys/class/drm/card0-DSI-1/disp_param
+    chmod 0660 /sys/devices/platform/soc/soc:qcom,dsi-display-primary/dimlayer_exposure
+
+service vendor.livedisplay-hal-2-1 /vendor/bin/hw/vendor.lineage.livedisplay@2.1-service.monet
+    class hal
+    user system
+    group system
