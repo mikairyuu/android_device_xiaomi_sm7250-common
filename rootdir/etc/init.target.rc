@@ -50,6 +50,8 @@ on init
     chown system system /sys/class/leds/white/delay_off
     chown system system /sys/class/leds/white/delay_on
     start leds-sh
+    write /sys/class/devfreq/soc:qcom,cpu-cpu-llcc-bw/governor "bw_hwmon"
+    write /sys/class/devfreq/soc:qcom,cpu-llcc-ddr-bw/governor "bw_hwmon"
 
 on early-fs
     start vold
