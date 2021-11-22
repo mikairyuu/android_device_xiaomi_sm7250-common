@@ -415,6 +415,10 @@ ro.config.vc_call_vol_steps=10
 PRODUCT_VENDOR_PROPERTIES += \
 wifi.aware.interface=wifi-aware0
 
+# Zygote
+PRODUCT_SYSTEM_PROPERTIES += \
+persist.device_config.runtime_native.usap_pool_enabled=true
+
 # Anti-debug
 PRODUCT_VENDOR_PROPERTIES += \
 persist.vendor.ims.disableADBLogs=1 \
