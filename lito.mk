@@ -186,6 +186,7 @@ PRODUCT_PACKAGES += \
     memtrack.lito \
     vendor.display.config@1.5 \
     vendor.display.config@1.11.vendor \
+    vendor.display.config@1.9.vendor \
     vendor.display.config@2.0 \
     vendor.display.config@2.0.vendor \
     vendor.qti.hardware.display.allocator-service \
