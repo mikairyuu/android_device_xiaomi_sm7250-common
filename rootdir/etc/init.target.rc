@@ -130,6 +130,9 @@ on boot
     chown system system /sys/class/drm/card0-DSI-1/disp_count
     chmod 0664 /sys/class/drm/card0-DSI-1/disp_count
     chown system system /sys/class/thermal/thermal_message/sconfig
+    chmod 0666 /sys/class/thermal/thermal_message/temp_state
+    chown system system /sys/class/thermal/thermal_message/temp_state
+    write /sys/class/thermal/thermal_message/sconfig 0
 #palm_sensor
     chown system system /sys/class/touch/touch_dev/palm_sensor
 
