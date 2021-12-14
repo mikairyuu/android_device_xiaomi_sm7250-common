@@ -23,6 +23,9 @@ import android.content.Intent;
 import android.util.Log;
 
 import org.lineageos.settings.doze.DozeUtils;
+import org.lineageos.settings.utils.FileUtils;
+import android.content.SharedPreferences;
+import androidx.preference.PreferenceManager;
 
 public class BootCompletedReceiver extends BroadcastReceiver {
 
