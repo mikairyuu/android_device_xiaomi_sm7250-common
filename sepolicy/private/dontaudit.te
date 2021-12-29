@@ -1,0 +1,4 @@
+dontaudit fsck self:capability kill;
+dontaudit linkerconfig self:capability kill;
+dontaudit vdc self:capability kill;
+dontaudit kernel self:qipcrtr_socket create;
