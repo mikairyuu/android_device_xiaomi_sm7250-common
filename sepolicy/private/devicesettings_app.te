@@ -15,6 +15,9 @@ allow devicesettings_app {
 allow devicesettings_app system_app_data_file:dir create_dir_perms;
 allow devicesettings_app system_app_data_file:{ file lnk_file } create_file_perms;
 
+allow devicesettings_app system_data_file:dir { search };
+allow devicesettings_app user_profile_root_file:dir { search };
+
 # Allow binder communication with gpuservice
 binder_call(devicesettings_app, gpuservice)
 
