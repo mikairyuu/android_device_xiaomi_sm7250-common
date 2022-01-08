@@ -259,10 +259,9 @@ PRODUCT_PACKAGES += \
 
 # IPACM
 PRODUCT_PACKAGES += \
-    ipacm \
-    IPACM_cfg.xml \
     libipanat \
     liboffloadhal
+$(call inherit-product, vendor/qcom/opensource/data-ipa-cfg-mgr/ipacm_vendor_product.mk)
 
 # Keymaster
 PRODUCT_PACKAGES += \
