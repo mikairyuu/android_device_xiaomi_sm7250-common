@@ -148,8 +148,10 @@ on boot
     chmod 0664 /sys/class/drm/card0-DSI-1/doze_brightness
     chown system system /sys/class/drm/card0-DSI-1/disp_count
     chmod 0664 /sys/class/drm/card0-DSI-1/disp_count
+    chmod 0664 /sys/class/thermal/thermal_message/sconfig
     chown system system /sys/class/thermal/thermal_message/sconfig
-    write /sys/class/thermal/thermal_message/sconfig 0
+    chmod 0666 /sys/class/thermal/thermal_message/temp_state
+    chown system system /sys/class/thermal/thermal_message/temp_state
 #palm_sensor
     chown system system /sys/class/touch/touch_dev/palm_sensor
 
