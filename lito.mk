@@ -477,5 +477,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     RemovePackages
 
+# RenderScript
+PRODUCT_PACKAGES += \
+    android.hardware.renderscript@1.0-impl
+
 # Inherit the proprietary files
 $(call inherit-product, vendor/xiaomi/sm7250-common/sm7250-common-vendor.mk)
