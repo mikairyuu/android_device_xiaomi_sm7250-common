@@ -331,4 +331,9 @@
             <instance>default</instance>
         </interface>
     </hal>
+     <hal format="hidl">
+        <name>android.hardware.power.stats</name>
+        <transport>hwbinder</transport>
+        <fqname>@1.0::IPowerStats/default</fqname>
+    </hal>
 </manifest>
