@@ -68,7 +68,7 @@
 /vendor/bin/hw/android\.hardware\.nfc_snxxx@1\.2-service                u:object_r:hal_nfc_default_exec:s0
 
 # Power
-/vendor/bin/hw/android\.hardware\.power-service\.xiaomi-sdm845-libperfmgr  u:object_r:hal_power_default_exec:s0
+/vendor/bin/hw/android\.hardware\.power-service\.xiaomi-lito-libperfmgr  u:object_r:hal_power_default_exec:s0
 
 # Persist subsystem
 /mnt/vendor/persist/subsys(/.*)?                                        u:object_r:persist_subsys_file:s0
