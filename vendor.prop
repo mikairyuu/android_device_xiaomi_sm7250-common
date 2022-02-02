@@ -267,6 +267,8 @@ persist.vendor.radio.add_power_save=1
 persist.vendor.radio.uicc_se_enabled=true
 rild.libpath=/vendor/lib64/libril-qc-hal-qmi.so
 ro.com.android.dataroaming=false
+ro.vendor.radio.llm=true
+ro.vendor.radio.5g=3
 
 # Seamless transfer
 sys.fflag.override.settings_seamless_transfer=true
