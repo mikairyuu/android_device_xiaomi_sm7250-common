@@ -72,7 +72,7 @@
             <instance>default</instance>
         </interface>
     </hal>
- <hal format="hidl" optional="true">
+    <hal format="hidl" optional="true">
         <name>vendor.nxp.nxpese</name>
         <version>1.0</version>
         <interface>
