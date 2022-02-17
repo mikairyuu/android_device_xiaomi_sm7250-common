@@ -337,5 +337,5 @@
     <string name="config_oemFastChargerStatusPath" translatable="false">/sys/class/power_supply/bms/fastcharge_mode</string>
 
     <!-- Exempt ImsService from privacy (location) indicators -->
-    <string name="config_systemAudioIntelligence" translatable="false">org.codeaurora.ims</string>
+    <string name="config_systemTelephonyPackage" translatable="false">com.qualcomm.qti.cne</string>
 </resources>
