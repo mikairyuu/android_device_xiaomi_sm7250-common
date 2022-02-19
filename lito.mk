@@ -81,7 +81,7 @@ PRODUCT_COPY_FILES += \
 
 # Atrace
 PRODUCT_PACKAGES += \
-    android.hardware.atrace@1.0-service
+    android.hardware.atrace@1.0-service.pixel
 
 # Audio
 PRODUCT_PACKAGES += \
