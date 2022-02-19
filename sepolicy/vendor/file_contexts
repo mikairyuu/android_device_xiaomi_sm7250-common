@@ -87,7 +87,7 @@
 
 # Thermal
 /data/vendor/thermal(/.*)?                                              u:object_r:thermal_data_file:s0
-/(vendor|system/vendor)/bin/hw/android\.hardware\.thermal@2\.0-service\.mock                                                u:object_r:hal_thermal_default_exec:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.thermal@2\.0-service\.pixel                                                u:object_r:hal_thermal_default_exec:s0
 
 # USB
 /vendor/bin/init\.mi\.usb\.sh                                           u:object_r:vendor_qti_init_shell_exec:s0
