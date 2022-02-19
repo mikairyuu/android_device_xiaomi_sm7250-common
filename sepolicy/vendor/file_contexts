@@ -1,3 +1,6 @@
+# Atrace
+/vendor/bin/hw/android\.hardware\.atrace@1.0-service\.pixel                                             u:object_r:hal_atrace_default_exec:s0
+
 # Audio
 /dev/socket/audio_hw_socket                                             u:object_r:audio_socket:s0
 /sys/devices/platform/soc/a8c000.i2c/i2c-2/2-005a/f0_value              u:object_r:vendor_sysfs_audio:s0
