@@ -23,7 +23,8 @@ allow mi_thermald {
   file
   lnk_file
 } rw_file_perms;
-
+allow mi_thermald vendor_file:file entrypoint;
+allow mi_thermald vendor_default_prop:property_service set;
 set_prop(mi_thermald, thermal_normal_prop)
 
 dontaudit mi_thermald self:capability dac_override;
