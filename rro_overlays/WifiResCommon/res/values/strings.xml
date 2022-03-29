@@ -4,4 +4,11 @@
          channels this should be empty. Values is a comma separated channel string and/or channel
          range string like '1-6,11'. -->
     <string name="config_wifiSoftap2gChannelList"></string>
+
+    <!-- Configure wifi tcp buffersizes in the form:
+        rmem_min,rmem_def,rmem_max,wmem_min,wmem_def,wmem_max -->
+    <string name="config_wifi_tcp_buffers" translatable="false">524288,2097152,8388608,262144,524288,4194304</string>
+
+    <!-- Default access point SSID used for tethering -->
+    <string name="wifi_tether_configure_ssid_default" translatable="false">Pixel</string>
 </resources>

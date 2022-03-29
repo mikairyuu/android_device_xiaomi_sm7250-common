@@ -6,42 +6,103 @@
     <!-- boolean indicating whether or not to reset channel configuration during cloud configuration restore -->
     <bool name="config_vendor_wifi_softap_owe_supported">true</bool>
 
-    <!-- boolean indicating whether the WiFi chipset has 5GHz band support.
-         Note: This config is replacing the config_wifi_dual_band_support
-         since more bands may now be supported (such as 6GHz), the naming dual_band
-         is no longer indicative, and a separate config now exists for each band -->
-    <bool name="config_wifi5ghzSupport">true</bool>
+    <!-- Boolean indicating whether the wifi chipset has 5GHz frequency band support -->
+    <bool translatable="false" name="config_wifi5ghzSupport">true</bool>
+
+    <!-- boolean indicating whether the WiFi chipset has 6GHz band support -->
+    <bool translatable="false" name="config_wifi6ghzSupport">true</bool>
+
+    <!-- Boolean indicating whether 802.11r Fast BSS Transition is enabled on this platform -->
+    <bool translatable="false" name="config_wifi_fast_bss_transition_enabled">true</bool>
+
+    <!-- Boolean indicating whether the wifi chipset has background scan support -->
+    <bool translatable="false" name="config_wifi_background_scan_support">true</bool>
+
+    <!-- Boolean indicating whether or not to revert to default country code when cellular
+    radio is unable to find any MCC information to infer wifi country code from -->
+    <bool translatable="false" name="config_wifi_revert_country_code_on_cellular_loss">false</bool>
+
+    <!-- Boolean indicating whether or not wifi should turn off when emergency call is made -->
+    <bool translatable="false" name="config_wifi_turn_off_during_emergency_call">true</bool>
 
     <!-- Wifi driver Automatic channel selection (ACS) for softap to include DFS channels -->
-    <bool name="config_wifiSoftapAcsIncludeDfs">true</bool>
+    <bool translatable="false" name="config_wifiSoftapAcsIncludeDfs">true</bool>
 
-    <!-- Boolean indicating whether the wifi chipset supports background scanning mechanism.
-         This mechanism allows the host to remain in suspend state and the dongle to actively
-         scan and wake the host when a configured SSID is detected by the dongle. This chipset
-         capability can provide power savings when wifi needs to be always kept on. -->
-    <bool name="config_wifi_background_scan_support">true</bool>
+    <!-- Enable ACS (auto channel selection) for Wifi hotspot (SAP) -->
+    <bool translatable="false" name="config_wifi_softap_acs_supported">true</bool>
 
-    <!-- Indicates that connected MAC randomization is supported on this device -->
-    <bool name="config_wifi_connected_mac_randomization_supported">true</bool>
-
-    <!-- Indicates that p2p MAC randomization is supported on this device -->
-    <bool name="config_wifi_p2p_mac_randomization_supported">true</bool>
-
-    <!-- Wifi driver supports Automatic channel selection (ACS) for softap -->
-    <bool name="config_wifi_softap_acs_supported">true</bool>
-
-    <!-- Wifi driver supports IEEE80211AC for softap -->
-    <bool name="config_wifi_softap_ieee80211ac_supported">true</bool>
-
-    <!-- Wifi driver supports IEEE80211AX for softap -->
-    <bool name="config_wifiSoftapIeee80211axSupported">true</bool>
+    <!-- Enable 802.11ac for Wifi hotspot (SAP) -->
+    <bool translatable="false" name="config_wifi_softap_ieee80211ac_supported">true</bool>
 
     <!-- Wifi driver supports IEEE80211AX single user beamformee for softap -->
-    <bool name="config_wifiSoftapHeSuBeamformeeSupported">true</bool>
+    <bool translatable="false" name="config_wifiSoftapHeSuBeamformeeSupported">true</bool>
 
     <!-- Wifi driver supports IEEE80211AX multiple user beamformer for softap -->
     <bool name="config_wifiSoftapHeSuBeamformerSupported">true</bool>
 
+    <!-- True if the firmware supports connected MAC randomization -->
+    <bool name="config_wifi_connected_mac_randomization_supported">true</bool>
+
+    <!-- True if the firmware supports p2p MAC randomization -->
+    <bool name="config_wifi_p2p_mac_randomization_supported">true</bool>
+
+    <!-- True if the firmware supports ap MAC randomization -->
+    <bool name="config_wifi_ap_mac_randomization_supported">true</bool>
+
+    <!-- True if the firmware supports Wi-Fi link probing -->
+    <bool name="config_wifi_link_probing_supported">true</bool>
+
+    <!-- Indicates that a full bugreport should be triggered when wifi diagnostics detects an error on non-user (i.e debug) builds -->
+    <bool translatable="false" name="config_wifi_diagnostics_bugreport_enabled">true</bool>
+
+    <!-- Enable adding minimum confirmation duration when sending network score to connectivity service. -->
+    <bool translatable="false" name="config_wifiMinConfirmationDurationSendNetworkScoreEnabled">true</bool>
+
+    <!-- Wifi driver supports IEEE80211AX for softap -->
+    <bool translatable="false" name="config_wifiSoftapIeee80211axSupported">true</bool>
+
+      <!-- Indicates that 11ax mode is supported on this device
+           Note that if this flag is set to true, then 11ax is assumed to be supported.
+           However, if it is left to the default value of false, the 11ax support will
+           be checked via NL80211 interface -->
+    <bool translatable="false" name="config_wifi11axSupportOverride">true</bool>
+
+    <!-- Wifi driver supports 6GHz band for softap -->
+    <bool translatable="false" name="config_wifiSoftap6ghzSupported">true</bool>
+
     <!-- Wifi driver supports WPA3 Simultaneous Authentication of Equals (WPA3-SAE) for softap -->
-    <bool name="config_wifi_softap_sae_supported">true</bool>
+    <bool translatable="false" name="config_wifi_softap_sae_supported">true</bool>
+
+    <!-- b/173044646 (does not apply to kona?): Enable STA + STA use-cases for teamfooding/testing.
+         HAL also needs to support STA + STA iface combination for the feature to be enabled.
+         So STA + STA will not get enabled on all devices because of this overlay alone.
+         Remove before Android 12 release! -->
+    <bool translatable="false" name="config_wifiMultiStaLocalOnlyConcurrencyEnabled">true</bool>
+    <bool translatable="false" name="config_wifiMultiStaNetworkSwitchingMakeBeforeBreakEnabled">true</bool>
+
+    <!-- Disable channel utilization estimation with fixed value.
+         b/160239223: Rx time is excluded in cca busy time and channel utilization is calculated
+         correctly during heavy DL traffic -->
+    <bool translatable="false" name="config_wifiChannelUtilizationOverrideEnabled">false</bool>
+
+    <!-- Whether to use the explicit vendor HAL API: IWifiStaIface.setRoamingState for disabling fw roaming. -->
+    <bool translatable="false" name="config_wifiUseHalApiToDisableFwRoaming">true</bool>
+
+    <!-- Array indicating wifi fatal firmware alert error code list from driver -->
+    <array translatable="false" name="config_wifi_fatal_firmware_alert_error_code_list">
+        <item>1</item>      <!-- WLAN_LOG_REASON_ROAM_FAIL -->
+        <item>256</item>    <!-- DATA_STALL_LOG_NONE -->
+        <item>257</item>    <!-- DATA_STALL_LOG_FW_VDEV_PAUSE -->
+        <item>258</item>    <!-- DATA_STALL_LOG_HWSCHED_CMD_FILTER -->
+        <item>259</item>    <!-- DATA_STALL_LOG_HWSCHED_CMD_FLUSH -->
+        <item>260</item>    <!-- DATA_STALL_LOG_FW_RX_REFILL_FAILED -->
+        <item>261</item>    <!-- DATA_STALL_LOG_FW_RX_FCS_LEN_ERROR -->
+        <item>262</item>    <!-- DATA_STALL_LOG_FW_WDOG_ERRORS -->
+        <item>263</item>    <!-- DATA_STALL_LOG_BB_WDOG_ERROR -->
+        <item>264</item>    <!-- DATA_STALL_LOG_POST_TIM_NO_TXRX_ERROR -->
+        <item>512</item>    <!-- DATA_STALL_LOG_HOST_STA_TX_TIMEOUT -->
+        <item>513</item>    <!-- DATA_STALL_LOG_HOST_SOFTAP_TX_TIMEOUT -->
+        <item>514</item>    <!-- DATA_STALL_LOG_NUD_FAILURE -->
+    </array>
+
 </resources>
