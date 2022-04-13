@@ -340,10 +340,6 @@ PRODUCT_SYSTEM_PROPERTIES += \
 ro.vendor.qti.core_ctl_max_cpu=4 \
 ro.vendor.qti.core_ctl_min_cpu=2
 
-# Qualcomm System Daemon
-PRODUCT_VENDOR_PROPERTIES += \
-persist.vendor.qcomsysd.enabled=1
-
 # Radio
 PRODUCT_VENDOR_PROPERTIES += \
 persist.radio.multisim.config=dsds \
