@@ -394,6 +394,12 @@ persist.camera.imglib.logs=0 \
 persist.camera.isp.debug=0 \
 persist.camera.sensor.debug=0
 
+# IFAAService
+PRODUCT_VENDOR_PROPERTIES += \
+persist.vendor.sys.fp.udfps.location.X_Y=445,2025 \
+persist.vendor.sys.fp.udfps.size.width_height=190,190 \
+ro.hardware.fp.udfps=true
+
 #IORap
 PRODUCT_SYSTEM_PROPERTIES += \
 ro.iorapd.enable=true \
