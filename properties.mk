@@ -379,6 +379,22 @@ wifi.aware.interface=wifi-aware0
 PRODUCT_SYSTEM_PROPERTIES += \
 persist.device_config.runtime_native.usap_pool_enabled=true
 
+# Anti-debug
+PRODUCT_VENDOR_PROPERTIES += \
+persist.vendor.ims.disableADBLogs=1 \
+persist.vendor.ims.disableIMSLogs=1 \
+persist.vendor.ims.disableDebugDataPathLogs=1 \
+persist.vendor.ims.disableDebugLogs=1 \
+persist.vendor.ims.disableSigHandler=1 \
+persist.vendor.ims.disableQXDMLogs=1 \
+log.tag.CHIUSECASE=ERROR \
+persist.vendor.camera.logInfoMask=false \
+persist.camera.mct.debug=0 \
+persist.camera.iface.logs=0 \
+persist.camera.imglib.logs=0 \
+persist.camera.isp.debug=0 \
+persist.camera.sensor.debug=0
+
 #IORap
 PRODUCT_SYSTEM_PROPERTIES += \
 ro.iorapd.enable=true \
