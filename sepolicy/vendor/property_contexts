@@ -40,3 +40,4 @@ ro.vendor.ril                                   u:object_r:vendor_public_vendor_
 sys.thermal.                                    u:object_r:vendor_thermal_normal_prop:s0
 vendor.sys.thermal.                             u:object_r:vendor_thermal_normal_prop:s0
 persist.sys.thermal.config                      u:object_r:vendor_thermal_normal_prop:s0
+vendor.thermal.                                 u:object_r:vendor_thermal_normal_prop:s0
