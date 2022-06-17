@@ -319,7 +319,7 @@ PRODUCT_PACKAGES += \
 
 # Power
 PRODUCT_PACKAGES += \
-    android.hardware.power-service.xiaomi-sdm845-libperfmgr \
+    android.hardware.power-service.xiaomi-lito-libperfmgr \
 
 PRODUCT_SOONG_NAMESPACES += \
     hardware/google/interfaces \
