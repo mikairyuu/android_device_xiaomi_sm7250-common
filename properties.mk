@@ -263,7 +263,8 @@ ro.gfx.driver.1=com.qualcomm.qti.gpudrivers.lito.api30 \
 ro.hardware.egl=adreno \
 ro.hardware.vulkan=adreno \
 ro.opengles.version=196610 \
-vendor.gralloc.disable_ubwc=0
+vendor.gralloc.disable_ubwc=0 \
+debug.gralloc.enable_fb_ubwc=1
 
 # IMS
 PRODUCT_SYSTEM_PROPERTIES += \
