@@ -399,8 +399,3 @@ PRODUCT_VENDOR_PROPERTIES += \
 persist.vendor.sys.fp.udfps.location.X_Y=445,2025 \
 persist.vendor.sys.fp.udfps.size.width_height=190,190 \
 ro.hardware.fp.udfps=true
-
-#IORap
-PRODUCT_SYSTEM_PROPERTIES += \
-ro.iorapd.enable=true \
-persist.device_config.runtime_native_boot.iorap_readahead_enable=true
