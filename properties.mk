@@ -411,7 +411,8 @@ persist.camera.imglib.logs=0 \
 persist.camera.isp.debug=0 \
 persist.camera.sensor.debug=0
 
-#IORap
-PRODUCT_SYSTEM_PROPERTIES += \
-ro.iorapd.enable=true \
-persist.device_config.runtime_native_boot.iorap_readahead_enable=true
+# App launch prefetching (IORapd)
+ro.iorapd.enable=false \
+iorapd.perfetto.enable=false \
+iorapd.readahead.enable=false \
+persist.device_config.runtime_native_boot.iorap_readahead_enable=false
