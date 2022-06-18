@@ -292,6 +292,7 @@ PRODUCT_VENDOR_PROPERTIES += \
 debug.stagefright.ccodec=4 \
 debug.media.codec2=2 \
 debug.stagefright.omx_default_rank=1000 \
+vendor.media.omx=0 \
 debug.stagefright.c2inputsurface=-1 \
 media.stagefright.enable-player=true \
 media.stagefright.enable-http=true \
