@@ -150,7 +150,8 @@ PRODUCT_VENDOR_PROPERTIES += \
 vendor.camera.aux.packagelist=org.codeaurora.snapcam
 
 PRODUCT_SYSTEM_PROPERTIES += \
-camera.disable_zsl_mode=true
+camera.disable_zsl_mode=true \
+persist.vendor.camera.perflock.enable=0
 
 # Charger
 PRODUCT_SYSTEM_PROPERTIES += \
