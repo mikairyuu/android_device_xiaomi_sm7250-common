@@ -296,7 +296,9 @@ ro.netflix.bsp_rev=Q7250-19133-1
 # Netmgr
 PRODUCT_SYSTEM_PROPERTIES += \
 persist.vendor.data.iwlan.enable=true \
-persist.vendor.data.mode=concurrent
+persist.vendor.data.mode=concurrent \
+persist.data.netmgrd.qos.enable=true \
+persist.data.mode=concurrent
 
 # NFC
 PRODUCT_VENDOR_PROPERTIES += \
@@ -350,6 +352,18 @@ ro.com.android.dataroaming=false
 
 PRODUCT_SYSTEM_PROPERTIES += \
 ro.telephony.default_network=33,33
+
+#system prop for RmNet Data
+PRODUCT_VENDOR_PROPERTIES \
+persist.rmnet.data.enable=true \
+persist.data.wda.enable=true \
+persist.data.df.dl_mode=5 \
+persist.data.df.ul_mode=5 \
+persist.data.df.agg.dl_pkt=10 \
+persist.data.df.agg.dl_size=4096 \
+persist.data.df.mux_count=8 \
+persist.data.df.iwlan_mux=9 \
+persist.data.df.dev_name=rmnet_usb0
 
 # Seamless transfer
 PRODUCT_VENDOR_PROPERTIES += \
