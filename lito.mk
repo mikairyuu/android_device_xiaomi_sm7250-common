@@ -381,16 +381,11 @@ PRODUCT_PACKAGES += \
     init.fingerprint.rc \
     init.qcom.power.rc \
     init.qcom.rc \
+    init.recovery.qcom.rc \
     init.target.rc \
-    fstab.default \
-    fstab.emmc \
-    recovery.fstab \
+    fstab.qcom \
+    fstab.qcom_ramdisk \
     ueventd.qcom.rc
-
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/rootdir/etc/fstab.default:$(TARGET_COPY_OUT_RAMDISK)/fstab.default \
-    $(LOCAL_PATH)/rootdir/etc/fstab.emmc:$(TARGET_COPY_OUT_RAMDISK)/fstab.emmc \
-    $(LOCAL_PATH)/rootdir/etc/init.recovery.qcom.rc:recovery/root/init.recovery.qcom.rc
 
 # Sensors
 PRODUCT_PACKAGES += \
