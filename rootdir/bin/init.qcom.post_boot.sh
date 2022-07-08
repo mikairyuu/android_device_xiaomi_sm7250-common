@@ -1042,7 +1042,7 @@ else
               *)
                 #Set PPR parameters for all other targets.
                 echo $set_almk_ppr_adj > /sys/module/process_reclaim/parameters/min_score_adj
-                echo 0 > /sys/module/process_reclaim/parameters/enable_process_reclaim
+                echo 1 > /sys/module/process_reclaim/parameters/enable_process_reclaim
                 echo 50 > /sys/module/process_reclaim/parameters/pressure_min
                 echo 70 > /sys/module/process_reclaim/parameters/pressure_max
                 echo 30 > /sys/module/process_reclaim/parameters/swap_opt_eff
@@ -3481,11 +3481,8 @@ case "$target" in
             echo 100 > /proc/sys/kernel/sched_group_upmigrate
 
             # cpuset settings
-            echo 0-2     > /dev/cpuset/background/cpus
-            echo 0-3     > /dev/cpuset/system-background/cpus
-            echo 4-7     > /dev/cpuset/foreground/boost/cpus
-            echo 0-2,4-7 > /dev/cpuset/foreground/cpus
-            echo 0-7     > /dev/cpuset/top-app/cpus
+            echo 0-3 > /dev/cpuset/background/cpus
+            echo 0-3 > /dev/cpuset/system-background/cpus
 
 
             # configure governor settings for little cluster
@@ -3907,7 +3904,7 @@ case "$target" in
 
         if [ `cat /sys/devices/soc0/revision` == "2.0" ]; then
              # r2.0 related changes
-             echo "0:1516800" > /sys/devices/system/cpu/cpu_boost/input_boost_freq
+             echo "0:1075200" > /sys/devices/system/cpu/cpu_boost/input_boost_freq
              echo 610000 > /sys/devices/system/cpu/cpufreq/policy0/schedutil/rtg_boost_freq
              echo 1075200 > /sys/devices/system/cpu/cpufreq/policy0/schedutil/hispeed_freq
              echo 1152000 > /sys/devices/system/cpu/cpufreq/policy6/schedutil/hispeed_freq
@@ -3989,10 +3986,6 @@ case "$target" in
         setprop vendor.dcvs.prop 0
         setprop vendor.dcvs.prop 1
 
-        # cpuset parameters
-        echo 0-5 > /dev/cpuset/background/cpus
-        echo 0-5 > /dev/cpuset/system-background/cpus
-
         # Turn off scheduler boost at the end
         echo 0 > /proc/sys/kernel/sched_boost
 
@@ -4060,10 +4053,8 @@ case "$target" in
         # Enable conservative pl
         echo 1 > /proc/sys/kernel/sched_conservative_pl
 
-        echo 2 > /sys/devices/system/cpu/cpu_boost/sched_boost_on_input
-        echo "0:1516800" > /sys/devices/system/cpu/cpu_boost/input_boost_freq
+        echo "0:1248000" > /sys/devices/system/cpu/cpu_boost/input_boost_freq
         echo 120 > /sys/devices/system/cpu/cpu_boost/input_boost_ms
-        echo 1 > /sys/devices/system/cpu/cpu_boost/sched_boost_on_powerkey_input
 
         # Set Memory parameters
         configure_memory_parameters
@@ -4139,11 +4130,8 @@ case "$target" in
         setprop vendor.dcvs.prop 1
 
         # cpuset parameters
-        echo 0-2     > /dev/cpuset/background/cpus
-        echo 0-3     > /dev/cpuset/system-background/cpus
-        echo 4-7     > /dev/cpuset/foreground/boost/cpus
-        echo 0-2,4-7 > /dev/cpuset/foreground/cpus
-        echo 0-7     > /dev/cpuset/top-app/cpus
+        echo 0-5 > /dev/cpuset/background/cpus
+        echo 0-5 > /dev/cpuset/system-background/cpus
 
         # Turn off scheduler boost at the end
         echo 0 > /proc/sys/kernel/sched_boost
@@ -4275,7 +4263,7 @@ case "$target" in
 
         #power/perf tunings for khaje
         case "$soc_id" in
-                 "518" )
+                 "518" | "561")
 
             # Core control parameters on big
             echo 0 > /sys/devices/system/cpu/cpu0/core_ctl/enable
@@ -5301,14 +5289,11 @@ case "$target" in
 		echo 85 85 > /proc/sys/kernel/sched_downmigrate
 		echo 100 > /proc/sys/kernel/sched_group_upmigrate
 		echo 10 > /proc/sys/kernel/sched_group_downmigrate
-		echo 1 > /proc/sys/kernel/sched_walt_rotate_big_tasks
 
 		echo 0-3 > /dev/cpuset/background/cpus
 		echo 0-3 > /dev/cpuset/system-background/cpus
 
 
-		# Turn off scheduler boost at the end
-		echo 0 > /proc/sys/kernel/sched_boost
 
 		# configure governor settings for silver cluster
 		echo "schedutil" > /sys/devices/system/cpu/cpufreq/policy0/scaling_governor
@@ -5400,6 +5385,10 @@ case "$target" in
 	                      done
 	           done
 	fi
+	# Turn off scheduler boost at the end
+	echo 0 > /proc/sys/kernel/sched_boost
+	echo 1 > /proc/sys/kernel/sched_walt_rotate_big_tasks
+
 	# memlat specific settings are moved to seperate file under
 	# device/target specific folder
 	setprop vendor.dcvs.prop 1
@@ -5745,10 +5734,8 @@ case "$target" in
 	echo 1 > /sys/devices/system/cpu/cpufreq/policy0/schedutil/pl
 
 	# configure input boost settings
-	echo "0:1344000" > /sys/devices/system/cpu/cpu_boost/input_boost_freq
+	echo "0:1324800" > /sys/devices/system/cpu/cpu_boost/input_boost_freq
 	echo 120 > /sys/devices/system/cpu/cpu_boost/input_boost_ms
-	echo "0:1804800 1:0 2:0 3:0 4:2419200 5:0 6:0 7:2841600" > /sys/devices/system/cpu/cpu_boost/powerkey_input_boost_freq
-	echo 400 > /sys/devices/system/cpu/cpu_boost/powerkey_input_boost_ms
 
 	# configure governor settings for gold cluster
 	echo "schedutil" > /sys/devices/system/cpu/cpufreq/policy4/scaling_governor
