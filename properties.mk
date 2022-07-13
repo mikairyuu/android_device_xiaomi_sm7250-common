@@ -284,7 +284,21 @@ ro.hardware.keystore_desede=true
 # Media
 PRODUCT_VENDOR_PROPERTIES += \
 debug.stagefright.ccodec=1 \
-debug.stagefright.omx_default_rank=0
+debug.stagefright.omx_default_rank=0 \
+media.stagefright.enable-player=true \
+media.stagefright.enable-http=true \
+media.stagefright.enable-aac=true \
+media.stagefright.enable-qcp=true \
+media.stagefright.enable-fma2dp=true \
+media.stagefright.enable-scan=true \
+mmp.enable.3g2=true \
+media.stagefright.thumbnail.prefer_hw_codecs=true \
+media.aac_51_output_enabled=true \
+mm.enable.smoothstreaming=true \
+#13631487 is decimal sum of supported codecs in AAL
+#codecs:(PARSER_)AAC AC3 AMR_NB AMR_WB ASF AVI DTS FLV 3GP 3G2 MKV MP2PS MP2TS MP3 OGG QCP WAV FLAC AIFF APE DSD MOV XVID
+mm.enable.qcom_parser=63963135 \
+persist.mm.enable.prefetch=true
 
 PRODUCT_SYSTEM_PROPERTIES += \
 media.settings.xml=/vendor/etc/media_profiles_vendor.xml
