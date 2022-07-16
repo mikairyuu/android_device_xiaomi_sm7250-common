@@ -281,6 +281,10 @@ vendor.iop.enable_uxe=0
 PRODUCT_VENDOR_PROPERTIES += \
 ro.hardware.keystore_desede=true
 
+# LMKD
+PRODUCT_SYSTEM_PROPERTIES += \
+ro.config.low_ram = false
+
 # Media
 PRODUCT_VENDOR_PROPERTIES += \
 debug.stagefright.ccodec=4 \
