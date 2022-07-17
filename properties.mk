@@ -174,7 +174,9 @@ dalvik.vm.heapminfree=512k \
 dalvik.vm.heapsize=512m \
 dalvik.vm.heapstartsize=8m \
 dalvik.vm.heaptargetutilization=0.75 \
-dalvik.vm.dex2oat64.enabled=true
+dalvik.vm.dex2oat64.enabled=true \
+dalvik.vm.dex2oat-cpu-set 0,1,2,3,4,5,7 \
+dalvik.vm.dex2oat-threads 6
 
 # Display
 PRODUCT_VENDOR_PROPERTIES += \
