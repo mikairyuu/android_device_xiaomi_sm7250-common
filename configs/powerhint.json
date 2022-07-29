@@ -1,20 +1,15 @@
 {
   "Nodes": [
     {
-      "Name": "UfsClkGateEnable",
-      "Path": "/sys/devices/platform/soc/1d84000.ufshc/clkgate_enable",
-      "Values": [
-        "0",
-        "1"
-      ],
-      "ResetOnInit": true
-    },
-    {
       "Name": "CPULittleClusterMaxFreq",
       "Path": "/sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq",
       "Values": [
         "9999999",
+        "1651200",
+        "1075200",
+        "864000",
         "1075201",
+        "1363200",
         "1516800",
         "1651201"
       ],
@@ -22,13 +17,28 @@
       "ResetOnInit": true
     },
     {
+      "Name": "CPULittleClusterMinFreq",
+      "Path": "/sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq",
+      "Values": [
+        "9999999",
+        "575999",
+        "1075200",
+        "1363200",
+        "576000"
+      ],
+      "ResetOnInit": true
+    },
+    {
       "Name": "CPUBigClusterMaxFreq",
       "Path": "/sys/devices/system/cpu/cpu6/cpufreq/scaling_max_freq",
       "Values": [
         "9999999",
+        "1900800",
         "1728000",
         "1478400",
         "9999998",
+        "940800",
+        "1152000",
         "1478401",
         "1728001",
         "1900801"
@@ -37,18 +47,46 @@
       "ResetOnInit": true
     },
     {
+      "Name": "CPUBigClusterMinFreq",
+      "Path": "/sys/devices/system/cpu/cpu6/cpufreq/scaling_min_freq",
+      "Values": [
+        "9999999",
+        "1900800",
+        "1728000",
+        "1478400",
+        "652800"
+      ],
+      "ResetOnInit": true
+    },
+    {
       "Name": "CPUBigPlusClusterMaxFreq",
       "Path": "/sys/devices/system/cpu/cpu7/cpufreq/scaling_max_freq",
       "Values": [
         "9999999",
+        "1996800",
         "1766400",
         "9999998",
+        "1401600",
+        "1094400",
         "1401601",
         "1766401",
         "1996801",
         "2188800"
       ],
       "DefaultIndex": 0,
+      "ResetOnInit": true
+    },
+    {
+      "Name": "CPUBigPlusClusterMinFreq",
+      "Path": "/sys/devices/system/cpu/cpu7/cpufreq/scaling_min_freq",
+      "Values": [
+        "9999999",
+        "1996800",
+        "1766400",
+        "806399",
+        "1401600",
+        "806400"
+      ],
       "ResetOnInit": true
     },
     {
@@ -256,6 +294,33 @@
       "ResetOnInit": true
     },
     {
+      "Name": "PMQoSCpuDmaLatency",
+      "Path": "/dev/cpu_dma_latency",
+      "Values": [
+        "61",
+        "100"
+      ],
+      "HoldFd": true
+    },
+    {
+      "Name": "UfsClkGateEnable",
+      "Path": "/sys/devices/platform/soc/1d84000.ufshc/clkgate_enable",
+      "Values": [
+        "0",
+        "1"
+      ],
+      "ResetOnInit": true
+    },
+    {
+      "Name": "F2fsRecessModeEnable",
+      "Path": "/dev/sys/fs/by-name/userdata/gc_urgent",
+      "Values": [
+        "2",
+        "0"
+      ],
+      "ResetOnInit": true
+    },
+    {
       "Name": "PowerHALMainState",
       "Path": "vendor.powerhal.state",
       "Values": [
@@ -319,9 +384,33 @@
     },
     {
       "PowerHint": "SUSTAINED_PERFORMANCE",
+      "Node": "CPUBigPlusClusterMaxFreq",
+      "Duration": 0,
+      "Value": "1401600"
+    },
+    {
+      "PowerHint": "SUSTAINED_PERFORMANCE",
+      "Node": "CPULittleClusterMaxFreq",
+      "Duration": 0,
+      "Value": "1075200"
+    },
+    {
+      "PowerHint": "SUSTAINED_PERFORMANCE",
       "Node": "GPUMaxFreq",
       "Duration": 0,
       "Value": "1"
+    },
+    {
+      "PowerHint": "INTERACTION",
+      "Node": "CPUBigPlusClusterMinFreq",
+      "Duration": 0,
+      "Value": "1401600"
+    },
+    {
+      "PowerHint": "INTERACTION",
+      "Node": "CPULittleClusterMinFreq",
+      "Duration": 0,
+      "Value": "1363200"
     },
     {
       "PowerHint": "INTERACTION",
@@ -366,6 +455,12 @@
       "Value": "0"
     },
     {
+      "PowerHint": "DEVICE_IDLE",
+      "Node": "F2fsRecessModeEnable",
+      "Duration": 0,
+      "Value": "2"
+    },
+    {
       "PowerHint": "LAUNCH",
       "Node": "TASchedtuneHighCap",
       "Duration": 3000,
@@ -382,6 +477,30 @@
       "Node": "CPUBigPlusClusterMaxFreq",
       "Duration": 3000,
       "Value": "9999999"
+    },
+    {
+      "PowerHint": "LAUNCH",
+      "Node": "CPUBigClusterMinFreq",
+      "Duration": 3000,
+      "Value": "9999999"
+    },
+    {
+      "PowerHint": "LAUNCH",
+      "Node": "CPUBigPlusClusterMinFreq",
+      "Duration": 3000,
+      "Value": "9999999"
+    },
+    {
+      "PowerHint": "LAUNCH",
+      "Node": "CPULittleClusterMinFreq",
+      "Duration": 3000,
+      "Value": "9999999"
+    },
+    {
+      "PowerHint": "LAUNCH",
+      "Node": "PMQoSCpuDmaLatency",
+      "Duration": 3000,
+      "Value": "61"
     },
     {
       "PowerHint": "LAUNCH",
@@ -456,10 +575,22 @@
       "Value": "0"
     },
     {
+      "PowerHint": "AUDIO_LAUNCH",
+      "Node": "PMQoSCpuDmaLatency",
+      "Duration": 0,
+      "Value": "61"
+    },
+    {
       "PowerHint": "AUDIO_STREAMING_LOW_LATENCY",
       "Node": "PowerHALAudioState",
       "Duration": 0,
       "Value": "AUDIO_STREAMING_LOW_LATENCY"
+    },
+    {
+      "PowerHint": "AUDIO_STREAMING_LOW_LATENCY",
+      "Node": "PMQoSCpuDmaLatency",
+      "Duration": 0,
+      "Value": "61"
     },
     {
       "PowerHint": "EXPENSIVE_RENDERING",
@@ -480,8 +611,20 @@
       "Value": "0"
     },
     {
+      "PowerHint": "ML_ACC",
+      "Node": "PMQoSCpuDmaLatency",
+      "Duration": 2000,
+      "Value": "61"
+    },
+    {
       "PowerHint": "FIXED_PERFORMANCE",
       "Node": "CPUBigPlusClusterMaxFreq",
+      "Duration": 0,
+      "Value": "9999999"
+    },
+    {
+      "PowerHint": "FIXED_PERFORMANCE",
+      "Node": "CPUBigPlusClusterMinFreq",
       "Duration": 0,
       "Value": "9999999"
     },
@@ -493,7 +636,19 @@
     },
     {
       "PowerHint": "FIXED_PERFORMANCE",
+      "Node": "CPUBigClusterMinFreq",
+      "Duration": 0,
+      "Value": "9999999"
+    },
+    {
+      "PowerHint": "FIXED_PERFORMANCE",
       "Node": "CPULittleClusterMaxFreq",
+      "Duration": 0,
+      "Value": "9999999"
+    },
+    {
+      "PowerHint": "FIXED_PERFORMANCE",
+      "Node": "CPULittleClusterMinFreq",
       "Duration": 0,
       "Value": "9999999"
     },
@@ -511,6 +666,12 @@
     },
     {
       "PowerHint": "Flipendo",
+      "Node": "CPULittleClusterMaxFreq",
+      "Duration": 0,
+      "Value": "1651200"
+    },
+    {
+      "PowerHint": "Flipendo",
       "Node": "CPUBigPlusClusterMaxFreq",
       "Duration": 0,
       "Value": "1766400"
@@ -522,10 +683,34 @@
       "Value": "1728000"
     },
     {
+      "PowerHint": "LOW_POWER_LITTLE_CLUSTER_50",
+      "Node": "CPULittleClusterMaxFreq",
+      "Duration": 3600000,
+      "Value": "864000"
+    },
+    {
+      "PowerHint": "LOW_POWER_LITTLE_CLUSTER_50",
+      "Node": "CPULittleClusterMinFreq",
+      "Duration": 3600000,
+      "Value": "575999"
+    },
+    {
       "PowerHint": "LOW_POWER_LITTLE_CLUSTER_60",
       "Node": "CPULittleClusterMaxFreq",
       "Duration": 3600000,
       "Value": "1075201"
+    },
+    {
+      "PowerHint": "LOW_POWER_LITTLE_CLUSTER_60",
+      "Node": "CPULittleClusterMinFreq",
+      "Duration": 3600000,
+      "Value": "575999"
+    },
+    {
+      "PowerHint": "LOW_POWER_LITTLE_CLUSTER_70",
+      "Node": "CPULittleClusterMaxFreq",
+      "Duration": 3600000,
+      "Value": "1363200"
     },
     {
       "PowerHint": "LOW_POWER_LITTLE_CLUSTER_80",
@@ -540,10 +725,40 @@
       "Value": "1651201"
     },
     {
+      "PowerHint": "LOW_POWER_CPU_50",
+      "Node": "CPUBigClusterMaxFreq",
+      "Duration": 3600000,
+      "Value": "940800"
+    },
+    {
+      "PowerHint": "LOW_POWER_CPU_50",
+      "Node": "CPUBigPlusClusterMaxFreq",
+      "Duration": 3600000,
+      "Value": "1094400"
+    },
+    {
+      "PowerHint": "LOW_POWER_CPU_50",
+      "Node": "CPUBigPlusClusterMinFreq",
+      "Duration": 3600000,
+      "Value": "806399"
+    },
+    {
+      "PowerHint": "LOW_POWER_CPU_60",
+      "Node": "CPUBigClusterMaxFreq",
+      "Duration": 3600000,
+      "Value": "1152000"
+    },
+    {
       "PowerHint": "LOW_POWER_CPU_60",
       "Node": "CPUBigPlusClusterMaxFreq",
       "Duration": 3600000,
       "Value": "1401601"
+    },
+    {
+      "PowerHint": "LOW_POWER_CPU_60",
+      "Node": "CPUBigPlusClusterMinFreq",
+      "Duration": 3600000,
+      "Value": "806399"
     },
     {
       "PowerHint": "LOW_POWER_CPU_70",
