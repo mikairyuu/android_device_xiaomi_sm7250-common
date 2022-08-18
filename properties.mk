@@ -144,7 +144,8 @@ persist.vendor.qcom.bluetooth.twsp_state.enabled=false \
 ro.bluetooth.a2dp_offload.supported=true \
 ro.vendor.bluetooth.wipower=false \
 vendor.qcom.bluetooth.soc=cherokee \
-bluetooth.device.class_of_device=90,2,12
+bluetooth.device.class_of_device=90,2,12 \
+bluetooth.profile.asha.central.enabled=true
 
 # Bluetooth profiles
 PRODUCT_VENDOR_PROPERTIES += \
