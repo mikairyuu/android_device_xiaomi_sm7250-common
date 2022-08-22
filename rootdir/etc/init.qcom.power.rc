@@ -29,6 +29,10 @@ on enable-low-power
     # Enable PowerHAL hint processing
     setprop vendor.powerhal.init 1
 
+on property:vendor.thermal.link_ready=1
+    chown system system /dev/thermal/tz-by-name/xo_therm/trip_point_0_temp
+    chown system system /dev/thermal/tz-by-name/xo_therm/trip_point_0_hyst
+
 on property:sys.boot_completed=1
     trigger enable-low-power
 
