@@ -206,7 +206,7 @@ vendor.display.disable_excl_rect_partial_fb=1 \
 vendor.display.disable_hw_recovery_dump=1 \
 vendor.display.disable_offline_rotator=1 \
 vendor.display.disable_scaler=0 \
-vendor.display.enable_async_powermode=0 \
+vendor.display.enable_async_powermode=1 \
 vendor.display.enable_optimize_refresh=1 \
 vendor.display.enable_posted_start_dyn=1 \
 vendor.display.qdcm.disable_factory_mode=1 \
@@ -270,7 +270,6 @@ debug.sf.early.app.duration=16500000 \
 debug.sf.earlyGl.sf.duration=13500000 \
 debug.sf.earlyGl.app.duration=21000000 \
 debug.sf.hw=0 \
-debug.sf.latch_unsignaled=1 \
 persist.demo.hdmirotationlock=false \
 persist.sys.sf.color_mode=9 \
 persist.sys.sf.color_saturation=1.0 \
@@ -287,11 +286,6 @@ PRODUCT_SYSTEM_PROPERTIES += \
 persist.dbg.volte_avail_ovr=1 \
 persist.dbg.vt_avail_ovr=1 \
 persist.dbg.wfc_avail_ovr=1
-
-# IOP
-PRODUCT_SYSTEM_PROPERTIES += \
-vendor.iop.enable_prefetch_ofr=1 \
-vendor.iop.enable_uxe=0
 
 # Keystore
 PRODUCT_VENDOR_PROPERTIES += \
@@ -426,10 +420,6 @@ ro.config.vc_call_vol_steps=10
 PRODUCT_VENDOR_PROPERTIES += \
 wifi.aware.interface=wifi-aware0
 
-# Zygote
-PRODUCT_SYSTEM_PROPERTIES += \
-persist.device_config.runtime_native.usap_pool_enabled=true
-
 # Anti-debug
 PRODUCT_VENDOR_PROPERTIES += \
 persist.vendor.ims.disableADBLogs=1 \
@@ -445,9 +435,3 @@ persist.camera.iface.logs=0 \
 persist.camera.imglib.logs=0 \
 persist.camera.isp.debug=0 \
 persist.camera.sensor.debug=0
-
-# App launch prefetching (IORapd)
-ro.iorapd.enable=false \
-iorapd.perfetto.enable=false \
-iorapd.readahead.enable=false \
-persist.device_config.runtime_native_boot.iorap_readahead_enable=false
