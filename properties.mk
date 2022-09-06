@@ -297,10 +297,9 @@ ro.config.low_ram = false
 
 # Media
 PRODUCT_VENDOR_PROPERTIES += \
-debug.stagefright.ccodec=4 \
-debug.media.codec2=2 \
-debug.stagefright.omx_default_rank=1000 \
+debug.stagefright.omx_default_rank=512 \
 vendor.media.omx=0 \
+vendor.qc2.venc.avgqp.enable=1 \
 debug.stagefright.c2inputsurface=-1 \
 media.stagefright.enable-player=true \
 media.stagefright.enable-http=true \
