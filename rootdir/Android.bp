@@ -47,6 +47,12 @@ sh_binary {
     vendor: true,
 }
 
+sh_binary {
+    name: "init.veth_ipa_config.sh",
+    src: "bin/init.veth_ipa_config.sh",
+    vendor: true,
+}
+
 // fstab
 prebuilt_etc {
     name: "fstab.default",
