@@ -1,0 +1,2 @@
+allow network_stack proc_net:file
+ { getattr  read };

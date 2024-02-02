@@ -1,0 +1,2 @@
+allow secure_element system_data_file:dir { add_name  remove_name };
+allow secure_element system_data_file:file { create  rename  unlink  write };

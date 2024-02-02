@@ -1,3 +1,4 @@
 allow platform_app zygote:unix_stream_socket { getopt };
 # Face Unlock
 get_prop(platform_app, vendor_camera_prop)
+allow platform_app default_android_hwservice:hwservice_manager { find };
